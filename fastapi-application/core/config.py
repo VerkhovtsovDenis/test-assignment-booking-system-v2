@@ -8,7 +8,7 @@ class ApiPrefix(BaseModel):
 
 class RunConfig(BaseModel):
     host: str = "0.0.0.0"
-    port: int = 8080
+    port: int = 8000
 
 
 class DatabaseConfig(BaseModel):
