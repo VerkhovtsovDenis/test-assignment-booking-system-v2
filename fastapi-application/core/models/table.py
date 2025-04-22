@@ -10,7 +10,9 @@ class Table(Base):
     location: Mapped[str] = mapped_column(String(30))
 
     def __repr__(self) -> str:
-        return f"Table(id={self.id!r}, " \
-               f"name={self.name!r}, " \
-               f"seats={self.seats!r}, " \
-               f"location={self.location!r})"
+        return (
+            f"Table(id={self.id!r}, "
+            f"name={self.name!r}, "
+            f"seats={self.seats!r}, "
+            f"location={self.location!r})"
+        )

@@ -13,18 +13,16 @@ from core.models import (
 
 @asynccontextmanager
 async def lifespan(app):
-    #startup
-    async  with db_helper.engine.begin() as conn:
+    # startup
+    async with db_helper.engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
 
     yield
-    #shutdown
+    # shutdown
     await db_helper.dispose()
 
 
-main_app = FastAPI(
-    lifespan=lifespan
-)
+main_app = FastAPI(lifespan=lifespan)
 
 main_app.include_router(
     api_router,

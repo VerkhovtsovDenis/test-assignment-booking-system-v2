@@ -1,10 +1,11 @@
 __all__ = (
-    "db_helper",
+    "Base",
     "Table",
     "Reservation",
+    "db_helper",
 )
 
-from .db_helper import db_helper
+from .base import Base
 from .table import Table
 from .reservation import Reservation
-from .base import Base
+from .db_helper import db_helper

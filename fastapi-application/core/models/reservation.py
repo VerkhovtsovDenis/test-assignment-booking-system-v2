@@ -10,12 +10,13 @@ class Reservation(Base):
     reservation_time: Mapped[DateTime] = mapped_column(DateTime)
     duration_minutes: Mapped[int] = mapped_column()
 
-    table: Mapped["Table"] = relationship('Table',
-                                          back_populates="reservations")
+    table: Mapped["Table"] = relationship('Table', back_populates="reservations")
 
     def __repr__(self) -> str:
-        return f"Reservation(id={self.id!r}, "\
-               f"customer_name={self.customer_name!r}, " \
-               f"table_id={self.table_id!r}, " \
-               f"reservation_time={self.reservation_time!r}, " \
-               f"duration_minutes={self.duration_minutes!r})"
+        return (
+            f"Reservation(id={self.id!r}, "
+            f"customer_name={self.customer_name!r}, "
+            f"table_id={self.table_id!r}, "
+            f"reservation_time={self.reservation_time!r}, "
+            f"duration_minutes={self.duration_minutes!r})"
+        )
