@@ -10,4 +10,4 @@ class Base(DeclarativeBase):
     def __tablename__(cls) -> str:
         return cls.__name__.lower()
 
-    id: Mapped[int] = mapped_column(primary_ket=True)
+    id: Mapped[int] = mapped_column(primary_key=True)
